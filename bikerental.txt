@@ -1,0 +1,205 @@
+import java.util.Scanner;
+import java.io.*;
+class welcome
+{
+static
+{
+System.out.println("    ****WELCOME****");
+}
+welcome()
+{
+System.out.println("****BIKE RENTAL SYSTEM****");
+}
+}
+interface inter
+{
+public void prnt(int i);
+public void prnt(String s);
+}
+class intro implements inter
+{
+public void prnt(int i)
+{
+System.out.println("--------------------------");
+}
+public void prnt(String s)
+{
+System.out.println();
+}
+}
+class login
+{
+public void display(login log)
+{
+System.out.println("        *LOGIN*");
+}
+void v()
+{
+
+display(this);
+}
+}
+class logging
+{
+Scanner sc=new Scanner(System.in);
+int i,uid,pswd;
+signup1 s1=new signup1();
+void enter()
+{
+System.out.println("Already a Member");
+System.out.println("Enter 1 if You are already a member");
+System.out.println("Enter 0 if you are not a member");
+System.out.println("Enter your choice:");
+i=sc.nextInt();
+if(i==0)
+{
+	s1.signup2();
+}
+else
+{
+	check();
+}
+}
+void check()
+{
+System.out.println("-----LOG IN-----");
+System.out.println("Enter User ID:");
+uid=sc.nextInt();
+System.out.println("Enter Password:");
+pswd=sc.nextInt();
+}
+}
+class signup1 
+{
+Scanner sc=new Scanner(System.in);
+void signup2()
+{
+System.out.println("-----SIGN UP-----");
+System.out.println("Enter Your Name:");
+String name=sc.nextLine();
+System.out.println("Enter your Mail Id:");
+String id=sc.nextLine();
+System.out.println("Enter User ID:");
+int uid=sc.nextInt();
+System.out.println("Enter Password:");
+int pswd=sc.nextInt();
+}
+}
+class override
+{
+void put()
+{
+System.out.println("Log In Unsuccessful");
+}
+}
+class override2 extends override
+{
+final void put()
+{
+System.out.println();
+System.out.println("--Log In Successful--");
+System.out.println();
+}
+}
+class info
+{
+final void show()
+{
+System.out.println("Enter Bike details:");
+}
+}
+class info2
+{
+private String bike_name;
+private String bike_color;
+private int n;
+Scanner sc=new Scanner(System.in);
+InputStreamReader in=new InputStreamReader(System.in);
+BufferedReader br=new BufferedReader(in);
+void show2() throws IOException
+{
+System.out.println("Enter the number of bikes required");
+n=sc.nextInt();
+
+for(int i=0;i<n;i++)
+{
+System.out.println("Enter the Bike model:");
+bike_name=br.readLine();
+System.out.println("Enter the Bike color:");
+bike_color=br.readLine();
+}
+}
+}
+class rqst extends Thread
+{
+public void run()
+{
+System.out.println("--Request Granted--");
+}
+}
+class calci 
+{
+protected int duration;
+final int charges=1000;
+protected int cost;
+Scanner sc=new Scanner(System.in);
+void cal()
+{
+System.out.println("Enter the duration in hours");
+duration=sc.nextInt();
+cost=duration*charges;
+System.out.println("Total Cost Is :"+cost);
+}
+}
+class exit
+{
+exit()
+{
+super();
+System.out.println();
+}
+}
+public class Rental
+{
+public static void main(String args[])throws IOException
+{
+
+welcome w=new welcome();
+intro i=new intro();
+i.prnt(10);
+login l=new login();
+l.v();
+i.prnt(10);
+logging lg=new logging();
+lg.enter();
+signup1 s1=new signup1();
+override2 o2=new override2();
+o2.put();
+info io=new info();
+io.show();
+info2 if2=new info2();
+if2.show2();
+rqst r=new rqst();
+r.start();
+calci c=new calci();
+c.cal();
+exit e=new exit();
+StringBuffer sb=new StringBuffer("---TIXE---");
+sb.reverse();
+System.out.println(sb);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
